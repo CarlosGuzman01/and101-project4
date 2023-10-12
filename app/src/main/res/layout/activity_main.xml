@@ -55,14 +55,15 @@
 
     <TextView
         android:id="@+id/tvTotalAmount"
-        android:layout_width="40dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/tvTotal"
         app:layout_constraintTop_toTopOf="@id/tvTotal"
         android:layout_marginStart="30dp"/>
 
     <TextView
-        android:layout_width="40dp"
+        android:id="@+id/tvTipAmount"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/tvTip"
         app:layout_constraintTop_toTopOf="@id/tvTip"
