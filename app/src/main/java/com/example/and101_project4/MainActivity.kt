@@ -9,6 +9,7 @@ import com.example.and101_project4.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    val INITIAL_PERCENTAGE: Int = 15
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +17,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater) //setContentView sets the content of the initial activity
         setContentView(binding.root)
 
-        binding.seekBarTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(p0: SeekBar?, percentage: Int, p2: Boolean) {
+        //tvPercent
+        var tvPercentString: String = INITIAL_PERCENTAGE.toString() + "%"
+        binding.tvPercent.setText(tvPercentString)
+        binding.seekBarTip.progress = INITIAL_PERCENTAGE.toInt()
 
-                var percentageString: String  = percentage.toString()
+
+
+        binding.seekBarTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
+                var percentageString: String  = progress.toString()
                 binding.tvPercent.setText(percentageString + "%")
+
+
 
             }
 
